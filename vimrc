@@ -129,7 +129,6 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Plugin 'lyokha/vim-xkbswitch'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -140,27 +139,30 @@ Plugin 'dracula/vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'derekwyatt/vim-fswitch'
 Plugin 'kshenoy/vim-signature'
-"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'yosiat/oceanic-next-vim'
+"Plugin 'lyokha/vim-xkbswitch'
+"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
 "Plugin 'vim-scripts/DfrankUtil'
 "Plugin 'vim-scripts/vimprj'
 "Plugin 'dyng/ctrlsf.vim'
 "Plugin 'terryma/vim-multiple-cursors'
-Plugin 'scrooloose/nerdcommenter'
-"Plugin 'vim-scripts/DrawIt'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-"Plugin 'derekwyatt/vim-protodef'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
 "Plugin 'gcmt/wildfire.vim'
 "Plugin 'sjl/gundo.vim'
 "Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'suan/vim-instant-markdown'
+"Plugin 'vim-scripts/DrawIt'
+"Plugin 'derekwyatt/vim-protodef'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " Brief help
@@ -177,6 +179,7 @@ filetype plugin indent on    " required
 "colorscheme gruvbox
 "colorscheme monokain
 colorscheme lilypink
+"colorscheme OceanicNext
 "colorscheme ayu
 "colorscheme codedark
 
