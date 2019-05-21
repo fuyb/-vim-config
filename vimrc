@@ -65,9 +65,6 @@ filetype on
 " 根据侦测到的不同类型加载对应的插件
 filetype plugin on
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -130,26 +127,46 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'octol/vim-cpp-enhanced-highlight'
+
 Plugin 'lilydjwg/fcitx.vim'
+Plugin 'derekwyatt/vim-fswitch'
+
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 Plugin 'dracula/vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'derekwyatt/vim-fswitch'
 Plugin 'kshenoy/vim-signature'
 Plugin 'majutsushi/tagbar'
+
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
+" Nerdtree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdcommenter'
+
 Plugin 'yosiat/oceanic-next-vim'
+
+Plugin 'heavenshell/vim-pydocstring'
+
+" Ale and Ariline
+Plugin 'w0rp/ale'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'powerline/powerline'
+
+Plugin 'tpope/vim-surround'
+
 "Plugin 'lyokha/vim-xkbswitch'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
 "Plugin 'vim-scripts/indexer.tar.gz'
@@ -195,7 +212,7 @@ vnoremap <Leader>y "+y
 " 系统剪贴板内容粘贴至 vim
 nmap <Leader>p "+p
 " 关闭当前分割窗口
-nmap <Leader>q :q<CR>
+map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 " 保存当前窗口内容
 nmap <Leader>w :w<CR>
 " 所有窗口内容并退出 vim
@@ -235,7 +252,7 @@ let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
 " 忽略一些文件的显示
-let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.o$', '\.out', '\.a$', '\.so$', '\.*\.swp$']
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.o$', '\.out', '\.a$', '\.so$', '\.*\.swp$', '\.git', '\.sqlite3']
 
 " UltiSnips 的 tab 键与 YCM 冲突，重新设定
 let g:UltiSnipsExpandTrigger="<leader><tab>"
@@ -246,3 +263,42 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+
+" Ale
+" 始终开启标志列
+let g:ale_sign_column_always = 1
+let g:ale_set_highlights = 0
+" 自定义error和warning图标
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+" 在vim自带的状态栏中整合ale
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+" 在airline中整合ale
+let g:ale_airline_format = ['✗ %d', '⚡ %d', '✔ OK']
+" 显示Linter名称,出错或警告等相关信息
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" 使用clang对c和c++进行语法检查，对python使用flake8进行语法检查
+let g:ale_linters = {
+\   'c++': ['clang'],
+\   'c': ['clang'],
+\   'python': ['flake8'],
+\}
+" flake8 的参数
+let g:ale_python_flake8_options = '--ignore=E501'
+" 普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
+nmap sp <Plug>(ale_previous_wrap)
+nmap sn <Plug>(ale_next_wrap)
+" <Leader>s触发/关闭语法检查
+nmap <Leader>s :ALEToggle<CR>
+" <Leader>d查看错误或警告的详细信息
+nmap <Leader>d :ALEDetail<CR>
+
+" Airline
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme = 'light' "powerlineish'
+let g:airline_powerline_fonts = 1
