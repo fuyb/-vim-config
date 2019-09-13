@@ -40,8 +40,6 @@ set nofoldenable
 set incsearch
 " 搜索时大小写不敏感
 "set ignorecase
-" 关闭兼容模式
-set nocompatible
 " vim 自身命令行模式智能补全
 set wildmenu
 
@@ -82,7 +80,6 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
-" Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
   " Enable file type detection.
@@ -117,10 +114,11 @@ endif " has("autocmd")
 let &termencoding = &encoding
 set fileencodings=utf-8,gbk,ucs-bom,cp936,gb2312
 
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-
 "let g:XkbSwitchEnabled = 1
 "let g:XkbSwitchLib = '/usr/local/lib/libxkbswitch.so'
+
+" 关闭兼容模式
+set nocompatible
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -128,14 +126,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 
-Plugin 'Lokaltog/vim-powerline'
-
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'derekwyatt/vim-fswitch'
 
+" Colorschemes
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'yosiat/oceanic-next-vim'
 
 Plugin 'dracula/vim'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -155,7 +153,6 @@ Plugin 'fholgado/minibufexpl.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 
-Plugin 'yosiat/oceanic-next-vim'
 
 Plugin 'heavenshell/vim-pydocstring'
 
@@ -167,6 +164,7 @@ Plugin 'powerline/powerline'
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
+Plugin 'arrufat/vala.vim'
 
 "Plugin 'lyokha/vim-xkbswitch'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
@@ -182,7 +180,7 @@ Plugin 'tpope/vim-surround'
 "Plugin 'vim-scripts/DrawIt'
 "Plugin 'derekwyatt/vim-protodef'
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin indent on
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
