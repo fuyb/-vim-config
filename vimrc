@@ -58,11 +58,6 @@ set ruler		" show the cursor position all the time
 set cursorline
 "set cursorcolumn
 
-" 开启文件类型侦测
-filetype on
-" 根据侦测到的不同类型加载对应的插件
-filetype plugin on
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
