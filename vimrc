@@ -110,6 +110,8 @@ set fileencodings=utf-8,gbk,ucs-bom,cp936,gb2312
 
 " 关闭兼容模式
 set nocompatible
+" 关闭filetype, 后面会打开
+filetype off
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
