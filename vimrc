@@ -162,38 +162,11 @@ Plugin 'xolox/vim-misc'
 " Mini Buffer explorer
 Plugin 'fholgado/minibufexpl.vim'
 
-"Plugin 'lyokha/vim-xkbswitch'
-"Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
-"Plugin 'vim-scripts/indexer.tar.gz'
-"Plugin 'vim-scripts/DfrankUtil'
-"Plugin 'vim-scripts/vimprj'
-"Plugin 'dyng/ctrlsf.vim'
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'gcmt/wildfire.vim'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'suan/vim-instant-markdown'
-"Plugin 'vim-scripts/DrawIt'
-"Plugin 'derekwyatt/vim-protodef'
 call vundle#end()            " required
 filetype plugin indent on
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
 
 " 配色方案 colorscheme
-"set background=dark
-"colorscheme molokai
-"colorscheme dracula
-"colorscheme gruvbox
-"colorscheme monokain
 colorscheme lilypink
-"colorscheme OceanicNext
-"colorscheme ayu
-"colorscheme codedark
 
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
@@ -291,11 +264,11 @@ nmap <Leader>s :ALEToggle<CR>
 nmap <Leader>d :ALEDetail<CR>
 
 " Airline
-" let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme = 'light' "powerlineish'
+let g:airline_theme = 'light'
 let g:airline_powerline_fonts = 1
 
 " Vim session
@@ -309,4 +282,3 @@ set sessionoptions-=help
 " BufMRU
 nmap <Leader>jh :BufMRUPrev<CR>
 nmap <Leader>jl :BufMRUNext<CR>
-
