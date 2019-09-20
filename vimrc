@@ -149,7 +149,6 @@ Plugin 'heavenshell/vim-pydocstring'
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'powerline/powerline'
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
@@ -264,7 +263,7 @@ nmap <Leader>s :ALEToggle<CR>
 nmap <Leader>d :ALEDetail<CR>
 
 " Airline
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
