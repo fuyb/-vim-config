@@ -137,7 +137,6 @@ Plugin 'honza/vim-snippets'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 
 " python doc stirng
@@ -159,11 +158,6 @@ Plugin 'xolox/vim-misc'
 
 " Mini Buffer explorer
 Plugin 'fholgado/minibufexpl.vim'
-
-" Buffer explorer
-"Plugin 'jlanzarotta/bufexplorer'
-
-"Plugin 'thaerkh/vim-workspace'
 
 "Plugin 'lyokha/vim-xkbswitch'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
