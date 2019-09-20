@@ -117,6 +117,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'derekwyatt/vim-fswitch'
 
+" Switch buffer
+Plugin 'mildred/vim-bufmru'
+
 " Colorschemes
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasiser/vim-code-dark'
@@ -302,3 +305,8 @@ nmap <Leader>ss :NERDTreeClose<CR>:SaveSession<CR>
 nmap <Leader>ssq :NERDTreeClose<CR>:SaveSession!<CR>:q<CR>
 " If you don't want help windows to be restored:
 set sessionoptions-=help
+
+" BufMRU
+nmap <Leader>jh :BufMRUPrev<CR>
+nmap <Leader>jl :BufMRUNext<CR>
+
