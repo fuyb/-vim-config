@@ -279,6 +279,7 @@ nmap <Leader>ssq :NERDTreeClose<CR>:SaveSession!<CR>:q<CR>
 " If you don't want help windows to be restored:
 set sessionoptions-=help
 
-" BufMRU
-nmap <Leader>jh :BufMRUPrev<CR>
-nmap <Leader>jl :BufMRUNext<CR>
+" Tabline
+set hidden
+nnoremap <Leader>jl :bnext<CR>
+nnoremap <Leader>jh :bprev<CR>
