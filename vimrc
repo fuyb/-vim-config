@@ -117,9 +117,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'lilydjwg/fcitx.vim'
 Plugin 'derekwyatt/vim-fswitch'
 
-" Switch buffer
-Plugin 'mildred/vim-bufmru'
-
 " Colorschemes
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasiser/vim-code-dark'
