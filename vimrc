@@ -137,11 +137,10 @@ Plugin 'honza/vim-snippets'
 " Nerdtree
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 
-
+" python doc stirng
 Plugin 'heavenshell/vim-pydocstring'
 
 " Ale and Ariline
@@ -153,6 +152,18 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-surround'
 Plugin 'arrufat/vala.vim'
+
+" VIM session
+Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
+
+" Mini Buffer explorer
+Plugin 'fholgado/minibufexpl.vim'
+
+" Buffer explorer
+"Plugin 'jlanzarotta/bufexplorer'
+
+"Plugin 'thaerkh/vim-workspace'
 
 "Plugin 'lyokha/vim-xkbswitch'
 "Plugin 'vim-scripts/BOOKMARKS--Mark-and-Highlight-Full-Lines'
@@ -219,14 +230,17 @@ nnoremap <Leader>jw <C-W>j
 " 定义快捷键在结对符之间跳转
 nmap <Leader>M %
 
-" 显示/隐藏 MiniBufExplorer 窗口
-map <Leader>bl :MBEToggle<cr>
-" buffer 切换快捷键
-map <C-Tab> :MBEbn<cr>
-map <C-S-Tab> :MBEbp<cr>
-
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
+
+"autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" 保存Session
+nmap <Leader>ss :SaveSession<CR>
+nmap <Leader>ssq :SaveSession<CR>:q
 
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
@@ -240,6 +254,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 " 忽略一些文件的显示
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.o$', '\.out', '\.a$', '\.so$', '\.*\.swp$', '\.git', '\.sqlite3']
+" 
 
 " UltiSnips 的 tab 键与 YCM 冲突，重新设定
 let g:UltiSnipsExpandTrigger="<leader><tab>"
@@ -289,3 +304,9 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme = 'light' "powerlineish'
 let g:airline_powerline_fonts = 1
+
+" Vim session
+" If you don't want help windows to be restored:
+set sessionoptions-=help
+" Don't save hidden and unloaded buffers in sessions.
+set sessionoptions-=buffers
