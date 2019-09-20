@@ -238,10 +238,6 @@ nmap <Leader>fl :NERDTreeToggle<CR>
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" 保存Session
-nmap <Leader>ss :SaveSession<CR>
-nmap <Leader>ssq :SaveSession<CR>:q<CR>
-
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
 " 设置NERDTree子窗口位置
@@ -306,7 +302,9 @@ let g:airline_theme = 'light' "powerlineish'
 let g:airline_powerline_fonts = 1
 
 " Vim session
+" 保存 Session
+nmap <Leader>ss :NERDTreeClose<CR>:SaveSession<CR>
+" 保存 Session 并退出
+nmap <Leader>ssq :NERDTreeClose<CR>:SaveSession!<CR>:q<CR>
 " If you don't want help windows to be restored:
 set sessionoptions-=help
-" Don't save hidden and unloaded buffers in sessions.
-set sessionoptions-=buffers
