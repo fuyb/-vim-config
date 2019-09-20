@@ -240,7 +240,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " 保存Session
 nmap <Leader>ss :SaveSession<CR>
-nmap <Leader>ssq :SaveSession<CR>:q
+nmap <Leader>ssq :SaveSession<CR>:q<CR>
 
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
